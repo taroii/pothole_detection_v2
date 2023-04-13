@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="it">
+  <meta name="keywords" content="AI, Pothole Detector, AI Project, Deep Learning">
+  
+  <meta name="author" content="">
+
+  <title>Pothole Detector</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/plugins/fontawesome/css/all.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+
+</head>
+
+
+<body id="top-header">
+
+
+<!-- LOADER TEMPLATE -->
+<div id="page-loader">
+    <div class="loader-icon fa fa-spin colored-border"></div>
+</div>
+<!-- /LOADER TEMPLATE -->
+
+     <!-- NAVBAR
+    ================================================= -->
+        
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top site-navigation main-nav navbar-togglable">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="{{ url_for('static', filename='images1/home3.png')}}" width="45" height="45" alt="">
+              </a>
+            <a class="navbar-brand" href="#">
+                <h3>Pothole Detector</h3>
+            </a>
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span>
+            </button>
+
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <!-- Links -->
+                <ul class="navbar-nav row">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#home" id="navbarWelcome" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Links
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarWelcome">
+                                 <a class="dropdown-item " target="_blank" href="https://github.com/taroii/pothole_detection_v2">
+                                    Github Repo
+                                </a>
+                                <a class="dropdown-item " target="_blank" href="https://taroiyadomi.netlify.app">
+                                    My Personal Site
+                                </a> 
+                        </li>
+                        <li class="nav-item ">
+                            <a href="#home" class="nav-link">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="#meet_the_team" class="nav-link">
+                                About Us
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="#projects" class="nav-link">
+                                Our Work
+                            </a>
+                        </li>
+                    </ul>
+                <ul class="ml-lg-auto list-unstyled m-0 nav-btn">
+                    <li><a href="https://ai-camp.org" target="_blank" class="btn btn-green btn-circled btn-two">Register for AI Camp</a></li>
+                </ul>
+            </div> <!-- / .navbar-collapse -->
+        </div> <!-- / .Container -->
+    </nav>
+    <a id="home"></a>
+ <!-- HERO
+    ================================================== -->
+    <section class="banner-area py-5" id="banner-4">
+       <div class="overlay feature-overlay"></div>
+        <!-- Content -->
+        <div class="container">
+            <div class="row  align-items-center justify-content-center">
+                <div class="col-md-12 col-lg-9">
+                   <div class="banner-content2 text-center style-2">
+                        <!-- Heading -->
+                        <h1 class="display-4 mb-4 ">
+                            AI Pothole Recognition
+                        </h1>
+
+                        <!-- Subheading -->
+                        <p class="lead mb-5 pr-0">
+                            Created as part of AI Camp's Summer Intern Program<br>
+By Taro Iyadomi
+                        </p>
+
+                        <!-- Button -->
+                            <a class="mb-0" id='seefood_button'>
+                                <form id='seefood_form' method=post enctype=multipart/form-data>
+                                    <input id="seefood_input_field" name="file" type="file" onchange="this.form.submit();" hidden/>
+                                </form>
+                                <button href="#" target="_blank" class="btn btn-white btn-circled btn-text">
+                                    <i class="fas fa-camera pr-2 left" aria-hidden="true"></i> Click to detect a pothole!
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- / .row -->
+        </div> <!-- / .container -->
+    </section>
+
+<a id="motivation"></a>
+  <h2 class="section-title section-title-padding mt-3 text-center">
+                            Motivation 
+                        </h2>
+      <p class="h4">     Using images of roads with potholes and without potholes, the goal of our model is to detect the existence of potholes in those images. Naturally, these images have varying degrees of pothole-intensity (ie how big the pothole is), so possible improvements to the model (try above!) include adding the ability to classify the potholes into different intensity categories, as well as calculate their likelihoods of causing tire damage for sedans, crossovers, SUVs, et cetera. </p> 
+      <p class="h4 my-5" style="text-align: center;">
+    As we see many companies collecting street data for self-driving cars, perhaps some of that data can be utilized by local governmental organizations to help improve the condition of roads by being able to quantify which roads need the most care (we can use # of potholes or average pothole intensity) as well as where these potholes occur. For example, this can be done using Google’s Streetview, since we can use images of roads for our model and map those results to specific streets to help accomplish this task.</p>
+
+<a id="meet_the_team"></a>
+<section class="section section-padding" id="services-2">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6 text-center">
+                    <div class="section-heading">
+                        <!-- Heading -->
+                        <h2 class="section-title section-title-padding mb-2 text-white">
+                            Meet the Creator
+                        </h2>
+                    </div>
+                </div>
+            </div> <!-- / .row -->
+
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-4 col-sm-6 col-md-6 mb-30">
+                    <div class="web-service-block">
+                        <img class="image-container img-fluid" src="{{ url_for('static', filename='images1/hero.jpg')}}">
+                        <h2>Taro Iyadomi</h2>
+                        <p>Data Theory Major @ UCLA</p>
+                        <p>Taro is a third-year Data Science student at UCLA who has a passion for AI. With new AI technologies being produced every minute, he wants to ride this wave and explore a brighter, more equitable future empowered by AI. He also finds it weird that he's writing this in third-person, but continues to do so to follow the format of this template!</p>
+                    </div>
+                </div>
+            </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 text-center">
+                        <div class="section-heading">
+                            <!-- Heading -->
+                            <h2 class="section-title section-text">
+                                My Intructors
+                            </h2>
+                        </div>
+                    </div>
+                </div> <!-- / .row -->
+    
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-sm-6 col-md-6">
+                        <div class="web-service-block">
+                            <img class="image-container img-fluid" src="{{ url_for('static', filename='images1/blake.jpg')}}">
+                            <h2>Blake Martin</h2>
+                            <p>Product Manager @ AI Camp</p>
+                            <p>I don't really know much about Blake, except for the fact that he's a hard-working, intern-training person who answers everyones questions. I got this picture of him off of his LinkedIn, which also shows that he's a student at Brescie University. Besides that, he's constantly sharing images of his vinyl collection and helping people with their coding questions on our discord!</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-md-6">
+                        <div class="web-service-block">
+                            <img class="image-container img-fluid" src="{{ url_for('static', filename='images1/aditya.png')}}">
+                            <h2>Aditya Velusamy</h2>
+                            <p>Team Tomorrow @ AI Camp</p>
+                            <p>I don't really know much about Aditya either, but based on his GitHub, he's a 14 year old developer from Pasadena (CA) who's a lot more talented than I am... Didn't think this would be so painful to write. I'm going to stop writing about him to preserve what little ego I have left...</p>
+                        </div>
+                    </div>
+                </div>
+    </section>
+    <section id="projects" class="section-bottom">
+        <div class="container">
+            <div class="row py-4">
+                <div class="col-lg-7 col-md-12 col-sm-12 ">
+                    <div class="single-project">
+                        <img src="{{ url_for('static', filename='images1/bg/banner_bg.jpg')}}" alt="" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12 ">
+                    <div class="project-content-block">
+                        <h2>Github</h2>
+                        <h2>Want to see the building process of our project?</h2>
+                        <p>Explore the inner workings of our project, from capturing data scripts to YOLO training!</p>
+                        <p class="mb-0">
+                            <a href="https://github.com/taroii/pothole_detection_v2" target="_blank" class="btn btn-white-black btn-circled">
+                                AI Camp Repository
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ <footer class="section " id="footer">
+        <div class="overlay footer-overlay"></div>
+        <!--Content -->
+        <div class="container">
+            <div width="100%" class="row">
+                <div class="col justify-content-center align-items-center text-center">  
+                <div class="footer-widget">
+                        <!-- Brand -->
+                        <a href="#" class="footer-brand text-white">
+                            <h2 class="section-title section-text">AI Camp</h2>
+                        </a>
+                        <h1>Learn AI in three weeks with zero coding experience.</h1>
+                        <p>AI Camp teaches middle and high school students machine learning and career frameworks through real life experience. <br>Prepare for your major and career by joining us!</p>
+                        <p class="mb-0">
+                            <a href="https://ai-camp.org" target="_blank" margin-bottom="20px" class="btn btn-text btn-results btn-white btn-circled">
+                                Register for AI Camp
+                            </a>
+                        </p>
+                </div>
+                <div class="footer-widget footer-about">
+                    <h3>About</h3>
+                    <!-- Links -->
+                    <ul class="footer-links ">
+                        <li>
+                            <u>
+                            <a href="https://www.ai-camp.org/" target="_blank">
+                                AI Camp Website
+                            </a>
+                            </u>
+                        </li>
+                        <li>
+                            <u>
+                            <a href="https://www.ai-camp.org/terms-of-service" target="_blank">
+                                Terms of Services
+                            </a>
+                            </u>
+                        </li>
+                        <li>
+                            <u>
+                            <a href="https://www.ai-camp.org/privacy-notice" target="_blank">
+                                Privacy Policy
+                            </a>
+                        </u>
+                        </li>
+                        <li>
+                            <u>
+                            <a href="https://www.ai-camp.org/faq" target="_blank">
+                                Frequently Asked Questions
+                            </a>
+                        </u>
+                        </li>
+                        <li>
+                            <u>
+                            <a href="mailto: hello@ai-camp.org" target="_blank">
+                                Contact
+                            </a>
+                        </u>
+                        </li>
+                        <li>
+                        <u>
+                            <a href="https://www.youtube.com/channel/UCUGJzo5EwViLGpAgYphNyzg/featured" target="_blank">
+                                YouTube
+                            </a>
+                        </u>
+                        </li>
+                    </ul>
+            </div>  
+                </div>
+            </div> <!-- / .row -->
+
+
+            <div class="row text-right pt-5">
+                <div class="col-lg-12">
+                    <!-- Copyright -->
+                    <p class="footer-copy ">
+                        &copy; Copyright <span class="current-year">AI Camp</span> All rights reserved.
+                    </p>
+                </div>
+            </div> <!-- / .row -->
+        </div> <!-- / .container -->
+    </footer>
+
+
+    <!--  Page Scroll to Top  -->
+
+    <a class="scroll-to-top" href="#top-header">
+        <i class="fa fa-angle-up"></i>
+    </a>
+
+
+    <!-- 
+    Essential Scripts
+    =====================================-->
+    <!-- Main jQuery -->
+    <script src="{{ url_for('static', filename='plugins/jquery/jquery.min.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/theme.js')}}"></script>
+    <script>
+        // added to get upload with a button working
+        document.getElementById('seefood_button').addEventListener('click', openDialog);
+
+        function openDialog() {
+            document.getElementById('seefood_input_field').click();
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#spinner").bind("ajaxSend", function() {
+                $(this).show();
+            }).bind("ajaxStop", function() {
+                $(this).hide();
+            }).bind("ajaxError", function() {
+                $(this).hide();
+            });
+            // seefood_input_field
+            $('#seefood_button').click(function() {
+
+            });
+        });
+    </script>
+  </body>
+  </html>
+   
